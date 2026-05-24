@@ -566,9 +566,9 @@ body{
 
 /* Second bible quote variant (same styling) */
 .bible-quote2 {
-    margin-top: 0px;
+    margin-top: 10px;
 
-    line-height: 0;
+    line-height: 2;
 
     color: #6B4C40;
 
@@ -920,8 +920,8 @@ body{
 
     linear-gradient(
         180deg,
-        rgba(255,250,246,0.30),
-        rgba(255,248,244,0.38)
+        rgba(121, 104, 90, 0.3),
+        rgba(0, 0, 0, 0.38)
     );
 
     pointer-events:none;
@@ -1273,37 +1273,7 @@ body{
     transform:translateY(0);
 }
 
-/* FOOTER */
 
-.footer{
-
-    padding:
-    40px 20px 60px;
-
-    text-align:center;
-}
-
-.footer h2{
-
-    font-family:
-    'Cormorant Garamond',
-    serif;
-
-    font-size:min(40px, 8vw);
-
-    margin-bottom:12px;
-
-    white-space:nowrap;
-}
-
-.footer p{
-
-    font-size:min(10px, 2vw);
-
-    letter-spacing:3px;
-
-    white-space:nowrap;
-}
 
 /* MOBILE */
 
@@ -1403,9 +1373,9 @@ body.intro-active.intro-revealing > *:not(#intro-overlay){
     bottom:-10%;
     width:65vw;
     box-shadow: 
-        0 0 100px rgba(248, 222, 151, 0.95), 
-        0 0 45px rgba(255, 217, 160, 0.65),
-        inset 0 0 80px rgba(247, 230, 206, 0.342);
+        0 0 100px rgba(255, 255, 255, 0.95), 
+        0 0 45px rgba(255, 255, 255, 0.65),
+        inset 0 0 80px rgba(255, 255, 255, 0.342);
     transition: transform 1100ms cubic-bezier(0.22,1,0.36,1);
     will-change: transform;
 }
@@ -1448,12 +1418,12 @@ body.intro-active.intro-revealing > *:not(#intro-overlay){
     justify-content:center;
     width:clamp(160px, 35vw, 340px);
     height:clamp(160px, 35vw, 340px);
-    animation: floatingLogo 4s ease-in-out infinite;
+    animation: floatingLogo 2.0s ease-in-out infinite;
 }
 
 @keyframes floatingLogo{
     0% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
+    50% { transform: translateY(-12px); }
     100% { transform: translateY(0); }
 }
 
@@ -1465,7 +1435,7 @@ body.intro-active.intro-revealing > *:not(#intro-overlay){
     filter:drop-shadow(0 15px 35px rgba(0,0,0,0.5));
     will-change:transform, opacity;
 }
-
+/*
 .intro-logo-glow{
     position:absolute;
     inset:-20%;
@@ -1475,7 +1445,7 @@ body.intro-active.intro-revealing > *:not(#intro-overlay){
     filter:blur(20px);
     animation: glowingLogo 4s ease-in-out infinite;
 }
-
+*/
 @keyframes glowingLogo{
     0% { opacity: 0.5; transform: scale(1); }
     50% { opacity: 1; transform: scale(1.08); }
@@ -1490,15 +1460,17 @@ body.intro-active.intro-revealing > *:not(#intro-overlay){
     letter-spacing: 12px;
     color: #e642a1;
     text-shadow: 0 0 20px rgba(255,200,140,0.7), 0 0 8px rgba(255,255,255,0.45);
-    animation: tapBreathing 2.5s ease-in-out infinite;
+    animation: tapBreathing 1.5s ease-in-out infinite;
     text-align:center;
 }
 
 @keyframes tapBreathing{
-    0% { opacity: 0.4; }
-    50% { opacity: 1; }
-    100% { opacity: 0.4; }
+    0% { opacity: 0.0; }
+    50% { opacity: 0.6; }
+    100% { opacity: 0.0; }
 }
+
+
 
 #intro-overlay.opening .intro-logo-wrap,
 #intro-overlay.opening .intro-tap-text,
@@ -1513,7 +1485,7 @@ body.intro-active.intro-revealing > *:not(#intro-overlay){
 }
 
 #intro-overlay.opening .intro-backdrop{
-    opacity:0;
+    opacity:0.01;
     transition: opacity 1400ms ease 300ms;
 }
 
@@ -1541,8 +1513,7 @@ body.intro-active.intro-revealing > *:not(#intro-overlay){
 .invitation-card,
 .countdown-card,
 .calendar-card,
-.venue-section-card,
-.footer{
+.venue-section-card{
 
     width:100%;
 
@@ -1670,7 +1641,7 @@ body.intro-active.intro-revealing > *:not(#intro-overlay){
 
 .person-name{
 
-    font-size:17px;
+    font-size:15px;
 
     font-weight:700;
 
@@ -2099,6 +2070,10 @@ iframe{
     }
 }
 
+
+/* MOBILE */
+/* No manual mobile overrides — `clamp()` handles responsive scaling. */
+
 /* =========================================
    REMOVE AGGRESSIVE NOWRAP
 ========================================= */
@@ -2119,3 +2094,81 @@ iframe{
 }
 
 
+/* =========================================
+   FORCE FOOTER TYPOGRAPHY
+========================================= */
+
+.footer p.footer-compliment-text{
+
+    font-family:'Parisienne', cursive !important;
+
+    font-size:24px !important;
+
+    line-height:1.7 !important;
+
+    color:#ffffff !important;
+
+    font-weight:400 !important;
+
+    letter-spacing:0 !important;
+
+    text-align:center !important;
+
+    white-space:normal !important;
+
+    margin:0 auto !important;
+
+    width:100% !important;
+
+    max-width:1200px !important;
+
+    text-shadow:none !important;
+
+    transform:none !important;
+
+    filter:none !important;
+
+    -webkit-font-smoothing:antialiased;
+
+    text-rendering:optimizeLegibility;
+}
+
+.footer span.footer-compliment-name{
+
+    display:block !important;
+
+    margin-top:14px !important;
+
+    margin-bottom:1.6em !important;
+
+    /*font-family:'Parisienne', cursive !important;*/
+
+    font-size:12px !important;
+
+    line-height:1.7 !important;
+
+    color:#ffffff !important;
+
+    font-weight:400 !important;
+
+    letter-spacing:0 !important;
+
+    text-align:center !important;
+}
+
+/* MOBILE */
+
+@media(max-width:430px){
+
+    .footer p.footer-compliment-text{
+
+        font-size:24px !important;
+
+        line-height:1.7 !important;
+    }
+
+    .footer span.footer-compliment-name{
+
+        font-size:12px !important;
+    }
+}

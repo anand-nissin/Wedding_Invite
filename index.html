@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-
+    
     <meta charset="UTF-8">
 
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0"
     >
-
+    
     <title>Anand & Nissin Wedding</title>
 
     <link
@@ -28,6 +28,10 @@
         rel="stylesheet"
     >
 
+    <link
+    href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap"
+    rel="stylesheet">t"
+>
     <link
         rel="stylesheet"
         href="style.css"
@@ -378,13 +382,17 @@
 
     <footer class="footer">
 
-        <h2>
-            Anand & Nissin
-        </h2>
+    <div class="footer-compliment">
 
-        <p>
-            SEE YOU AT THE WEDDING
+        <p class="footer-compliment-text">
+            “Wishing you both a joyful forever”
         </p>
+
+        <span class="footer-compliment-name">
+            — Hari, Libin & Jijo
+        </span>
+
+    </div>
 
     </footer>
 
@@ -452,16 +460,20 @@
 
                 const bgMusic = document.getElementById('bg-music');
 
-                if (bgMusic) {
+                if(bgMusic){
+
+                    bgMusic.muted = false;
                     bgMusic.volume = 0.4;
 
-                    bgMusic.play()
-                        .then(() => {
-                            console.log('Wedding music started');
-                        })
-                        .catch((err) => {
-                            console.error('Music playback failed:', err);
-                        });
+                    bgMusic.play().then(() => {
+
+                        console.log('Wedding music started');
+
+                    }).catch((err) => {
+
+                        console.warn('Music playback failed:', err);
+
+                    });
                 }
 
                 // 2. Triangles open
@@ -516,7 +528,6 @@
                 }, 180);
             }
 
-            overlay.addEventListener('pointerdown', openInvitation, {once:true});
             overlay.addEventListener('click', openInvitation, {once:true});
         }
     })();
@@ -542,8 +553,13 @@
     </script>
 
     <!-- BACKGROUND MUSIC: HTML5 audio -->
-    <audio id="bg-music" preload="auto" loop playsinline>
-        <source src="wedding_song.mp3" type="audio/mpeg">
+<audio
+    id="bg-music"
+    preload="auto"
+    loop
+    playsinline
+    webkit-playsinline>
+    <source src="song.mp3" type="audio/mpeg">
     </audio>
 
 
